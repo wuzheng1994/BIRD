@@ -1,0 +1,17 @@
+python-dotenv
+pydantic-settings
+numpy
+pandas
+tqdm
+sqlalchemy
+gensim
+langchain-core
+langchain-community
+langchain-chroma
+chromadb
+dashscope
+
+# pybgpstream wraps libbgpstream. Install the C library first, then:
+#   sudo apt-get install libbgpstream-dev libwandio-dev
+#   pip install pybgpstream
+# See https://bgpstream.caida.org/docs/install/pybgpstream

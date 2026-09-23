@@ -1,0 +1,12 @@
+{
+  "prefix": "206.162.244.0/24",
+  "start_time": "2025-11-21 03:01:04",
+  "end_time": "2025-11-21 16:42:11",
+  "anomaly_type": "prefix_hijack",
+  "root_cause": {
+    "attacker_as": 834,
+    "victim_as": 53850,
+    "network_address": "206.162.244.0"
+  },
+  "description": "AS 834 hijacked prefix 206.162.244.0/24. The legitimate origin is AS 53850, but AS 834 is announcing this prefix. Analysis of the highest-scored path changes shows the origin AS changed from 53850 to 834 in multiple observed paths after the anomaly event."
+}

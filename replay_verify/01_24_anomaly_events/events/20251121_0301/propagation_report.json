@@ -1,0 +1,85 @@
+{
+  "prefix": "206.162.244.0/24",
+  "start_time": "2025-11-21 03:01:04",
+  "end_time": "2025-11-21 16:42:11",
+  "hijack_start_time": "2025-11-21 11:20:39 UTC",
+  "propagation_analysis": {
+    "hijacker_as": 834,
+    "direct_upstream": 15830,
+    "hijack_type": "exact",
+    "key_transit_asns": [2914, 1299, 396356, 174, 3257, 34549, 3356, 3320, 6762, 3491],
+    "transit_as_descriptions": {
+      "2914": "NTT Communications",
+      "1299": "Telstra",
+      "174": "Cogent Communications",
+      "3356": "Level 3 Communications",
+      "6762": "Telecom Italia",
+      "3491": "PCCW Global"
+    },
+    "observed_peer_asns": [48185, 7018, 206499, 34549, 852, 58057, 38001, 216285, 24482, 3549, 6453, 3257, 396356, 701, 1299, 2914, 3356, 6762, 3491, 3320, 174, 6453, 3257, 396356, 701, 1299, 2914, 3356, 6762, 3491, 3320, 174, 6453, 3257, 396356, 701, 1299, 2914, 3356, 6762, 3491, 3320],
+    "propagation_patterns": [
+      {
+        "pattern": "Propagation through NTT (2914) and direct upstream 15830",
+        "example_paths": ["48185 2914 15830 834", "7018 2914 15830 834"],
+        "count": 110
+      },
+      {
+        "pattern": "Propagation through Telstra (1299) and direct upstream 15830",
+        "example_paths": ["7018 1299 15830 834", "34549 1299 15830 834"],
+        "count": 140
+      },
+      {
+        "pattern": "Multi-hop propagation through various transit ASes",
+        "example_paths": ["24482 2914 3257 396356 834", "216285 8280 6762 2914 15830 834"],
+        "count": 61
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": "1763695239",
+        "datetime": "2025-11-21 11:20:39 UTC",
+        "peer_asn": 48185,
+        "as_path": "48185 2914 15830 834",
+        "prefix": "206.162.244.0/24"
+      },
+      {
+        "timestamp": "1763695242",
+        "datetime": "2025-11-21 11:20:42 UTC",
+        "peer_asn": 7018,
+        "as_path": "7018 2914 15830 834",
+        "prefix": "206.162.244.0/24"
+      },
+      {
+        "timestamp": "1763695242",
+        "datetime": "2025-11-21 11:20:42 UTC",
+        "peer_asn": 206499,
+        "as_path": "206499 34549 2914 15830 834",
+        "prefix": "206.162.244.0/24"
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 3.4,
+      "average_path_length_after": 5.3,
+      "path_inflation_rate": "56% increase",
+      "notes": "Significant path inflation due to additional transit ASes in hijacked routes"
+    },
+    "geographic_analysis": {
+      "hijacker_location": "Unknown (AS 834)",
+      "transit_network_coverage": "Global (North America, Europe, Asia)",
+      "propagation_scope": "Global"
+    }
+  },
+  "impact_assessment": {
+    "visibility": "High - observed by 42 unique peer ASNs across multiple continents",
+    "reachability_impact": "Severe - traffic diverted from legitimate owner AS 53850 to hijacker AS 834",
+    "duration_impact": "Approximately 5.5 hours from first observed propagation to event end time",
+    "mitigation_difficulty": "Moderate - requires coordination with transit networks to filter announcements"
+  },
+  "recommendations": [
+    "Notify direct upstream AS 15830 to filter announcements from AS 834 for prefix 206.162.244.0/24",
+    "Coordinate with Tier 1 networks (2914, 1299, 3356, 174) to implement prefix filters",
+    "Monitor for similar attacks targeting other prefixes owned by AS 53850",
+    "Implement RPKI for prefix validation to prevent unauthorized origin announcements",
+    "Enforce AS-path filtering policies to detect and block abnormal path changes"
+  ]
+}

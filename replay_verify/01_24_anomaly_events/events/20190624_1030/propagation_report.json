@@ -1,0 +1,86 @@
+{
+  "prefix": "97.107.66.0/23",
+  "start_time": "2019-06-24 10:30:00",
+  "end_time": "2019-06-24 12:39:00",
+  "leak_start_time": "2019-06-24 10:34:26 UTC",
+  "propagation_analysis": {
+    "leaking_as": 396531,
+    "leaked_to": [33154],
+    "direct_upstream": 701,
+    "leak_direction": "provider_to_provider",
+    "key_transit_asns": [1273, 701, 396531, 33154, 3356],
+    "transit_as_descriptions": {
+      "1273": "Vodafone Group",
+      "701": "Verizon Business (UUNET)",
+      "396531": "Tier.Net Technologies",
+      "33154": "Dedicated Networks LLC",
+      "3356": "Level 3 Communications (CenturyLink/Lumen)"
+    },
+    "observed_peer_asns": [3333, 50300],
+    "propagation_patterns": [
+      {
+        "pattern": "Leaked path through AS1273 (Vodafone) → AS701 (Verizon) → AS396531 (Tier.Net) → AS33154 (Dedicated Networks) → AS3356 (Level 3) → AS393436 (Zenlayer)",
+        "example_paths": ["3333 1273 701 396531 33154 3356 393436"],
+        "count": 28
+      },
+      {
+        "pattern": "Normal path through AS6939 (Hurricane Electric) → AS10835 (HIVELOCITY) → AS393436 (Zenlayer)",
+        "example_paths": ["3333 6939 10835 393436"],
+        "count": 28
+      },
+      {
+        "pattern": "Direct path through AS3356 (Level 3) to origin",
+        "example_paths": ["50300 3356 393436"],
+        "count": 1
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": "1561372466",
+        "datetime": "2019-06-24 10:34:26 UTC",
+        "peer_asn": 3333,
+        "as_path": "3333 1273 701 396531 33154 3356 393436",
+        "prefix": "97.107.66.0/23"
+      },
+      {
+        "timestamp": "1561372570",
+        "datetime": "2019-06-24 10:36:10 UTC",
+        "peer_asn": 3333,
+        "as_path": "3333 6939 10835 393436",
+        "prefix": "97.107.66.0/23"
+      },
+      {
+        "timestamp": "1561379280",
+        "datetime": "2019-06-24 12:28:00 UTC",
+        "peer_asn": 3333,
+        "as_path": "3333 6939 10835 393436",
+        "prefix": "97.107.66.0/23"
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 4.0,
+      "average_path_length_after": 5.5,
+      "path_inflation_rate": "37.5% increase",
+      "notes": "The normal AS path (3333 6939 10835 393436) is 4 hops. The leaked path (3333 1273 701 396531 33154 3356 393436) is 7 hops, adding 3 extra transit ASes (AS1273, AS701, AS396531, AS33154, AS3356 instead of AS6939, AS10835). The average path length across all 57 post-event records is 5.5 hops due to alternating normal and leaked paths."
+    },
+    "geographic_analysis": {
+      "transit_network_coverage": "Europe, North America",
+      "propagation_scope": "regional",
+      "leak_origin": "United States (AS396531 - Tier.Net Technologies)"
+    }
+  },
+  "impact_assessment": {
+    "visibility": "Observed by 2 peers (AS3333 RIPE NCC RIS and AS50300 Binary Racks). The leaked path alternated with the normal path at AS3333, appearing 28 times out of 57 total updates (49%).",
+    "reachability_impact": "The leaked path added 3 extra transit hops, causing traffic from AS3333 to traverse through AS1273 (Vodafone, Europe) → AS701 (Verizon, US) → AS396531 (Tier.Net, US) → AS33154 (Dedicated Networks, US) → AS3356 (Level 3, US) before reaching the legitimate origin AS393436 (Zenlayer). This extended path may have caused increased latency and potential congestion.",
+    "duration_impact": "The route leak persisted from approximately 10:34:26 UTC to at least 12:28:00 UTC (approx. 1 hour 54 minutes), with the leaked path interleaved with the normal path throughout the event period.",
+    "mitigation_difficulty": "Moderate. The leak involved multiple transit providers (AS1273 Vodafone, AS701 Verizon, AS3356 Level 3). Coordination with AS701 (direct upstream of leaking AS396531) would be required to implement prefix filtering. AS33154 should also filter to prevent accepting provider-to-provider leaks."
+  },
+  "recommendations": [
+    "Notify AS701 (Verizon Business) to implement prefix filtering on routes received from AS396531 (Tier.Net Technologies) to prevent re-advertisement of provider routes to other providers.",
+    "Notify AS33154 (Dedicated Networks LLC) to implement inbound filtering to reject customer-originated routes that include provider prefixes.",
+    "AS396531 (Tier.Net Technologies) should implement BGP export policies that prevent announcing provider routes to other providers (enforce valley-free routing).",
+    "Implement RPKI (Resource Public Key Infrastructure) for prefix 97.107.66.0/23 to enable route origin validation.",
+    "Deploy AS-path filtering to limit the number of AS hops and detect abnormal path inflation.",
+    "Monitor for similar route leak patterns, particularly involving AS396531, to detect recurring misconfiguration."
+  ]
+}

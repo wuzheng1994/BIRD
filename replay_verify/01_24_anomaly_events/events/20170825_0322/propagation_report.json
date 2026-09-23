@@ -1,0 +1,107 @@
+{
+  "prefix": "5.206.240.0/20",
+  "start_time": "2017-08-25 03:22:00",
+  "end_time": "2017-08-25 04:02:00",
+  "leak_start_time": "2017-08-25 03:22:52 UTC",
+  "propagation_analysis": {
+    "leaking_as": 15169,
+    "leaked_to": [21395],
+    "direct_upstream": 701,
+    "leak_direction": "provider-to-peer",
+    "key_transit_asns": [701, 15169, 21395, 5511, 2497, 8220, 1103, 286],
+    "transit_as_descriptions": {
+      "701": "Verizon/UUNET (Tier 1)",
+      "15169": "Google LLC",
+      "5511": "Orange (Tier 1)",
+      "2497": "IIJ (Japanese ISP)",
+      "8220": "COLT Technology Services",
+      "1103": "SURFnet (Dutch research network)",
+      "286": "KPN (Dutch telecom)",
+      "21395": "Peer network of Google"
+    },
+    "observed_peer_asns": [3333, 29608, 4777, 8758],
+    "propagation_patterns": [
+      {
+        "pattern": "Leaked via Google (AS 15169) from provider AS 701 to peer AS 21395",
+        "example_paths": ["3333 1103 286 701 15169 21395 57332"],
+        "count": 10
+      },
+      {
+        "pattern": "Propagation through Tier-1 Orange (AS 5511) to downstream peers",
+        "example_paths": ["29608 5511 701 15169 21395 57332", "8758 8220 5511 701 15169 21395 57332"],
+        "count": 6
+      },
+      {
+        "pattern": "Propagation through IIJ (AS 2497) in Japan",
+        "example_paths": ["4777 2497 701 15169 21395 57332"],
+        "count": 2
+      },
+      {
+        "pattern": "Normal path through AS 6939 (non-leaked)",
+        "example_paths": ["3333 1136 24785 6939 57332"],
+        "count": 2
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": "1503631372",
+        "datetime": "2017-08-25 03:22:52 UTC",
+        "peer_asn": 3333,
+        "as_path": "3333 1103 286 701 15169 21395 57332",
+        "prefix": "5.206.240.0/21"
+      },
+      {
+        "timestamp": "1503631372",
+        "datetime": "2017-08-25 03:22:52 UTC",
+        "peer_asn": 3333,
+        "as_path": "3333 1103 286 701 15169 21395 57332",
+        "prefix": "5.206.248.0/21"
+      },
+      {
+        "timestamp": "1503631436",
+        "datetime": "2017-08-25 03:23:56 UTC",
+        "peer_asn": 29608,
+        "as_path": "29608 5511 701 15169 21395 57332",
+        "prefix": "5.206.240.0/21"
+      },
+      {
+        "timestamp": "1503631444",
+        "datetime": "2017-08-25 03:24:04 UTC",
+        "peer_asn": 4777,
+        "as_path": "4777 2497 701 15169 21395 57332",
+        "prefix": "5.206.240.0/21"
+      },
+      {
+        "timestamp": "1503631466",
+        "datetime": "2017-08-25 03:24:26 UTC",
+        "peer_asn": 8758,
+        "as_path": "8758 8220 5511 701 15169 21395 57332",
+        "prefix": "5.206.240.0/21"
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 3.70,
+      "average_path_length_after": 6.70,
+      "path_inflation_rate": "81% increase",
+      "notes": "Route leak through Google (AS 15169) adds 3+ unnecessary transit hops via AS 701, significantly inflating the path length. Before the leak, prefix 5.206.240.0/20 was reachable via direct provider relationships (AS 9002, AS 3257)."
+    },
+    "geographic_analysis": {
+      "leak_origin": "United States (AS 15169 - Google LLC)",
+      "transit_network_coverage": "North America, Europe, Asia",
+      "propagation_scope": "Global propagation through Tier-1 networks (701/Verizon, 5511/Orange) reaching observers in Europe (3333/RIPE, 8758/Switzerland) and Asia (4777/Japan)"
+    }
+  },
+  "impact_assessment": {
+    "visibility": "Medium - observed by 4 peer ASNs (3333, 29608, 4777, 8758) across Europe and Asia",
+    "reachability_impact": "Moderate - leaked paths route traffic through Google (AS 15169) instead of the normal provider AS 9002, potentially causing traffic interception and added latency",
+    "duration_impact": "Medium - approximately 40 minute duration (03:22 to 04:02 UTC)",
+    "mitigation_difficulty": "Medium - requires coordination with AS 701 (Verizon) to enforce prefix filters on AS 15169's announcements"
+  },
+  "recommendations": [
+    "Notify AS 701 (Verizon/UUNET) to enforce prefix filtering on routes learned from AS 15169 (Google)",
+    "Coordinate with AS 15169 (Google) to implement proper route filtering policies preventing provider-to-peer leaks",
+    "Implement RPKI ROA for prefix 5.206.240.0/20 by AS 57332 to validate origin AS",
+    "Deploy BGP route leak detection systems (e.g., AS path consistency checks, max-prefix limits)",
+    "Monitor for similar patterns involving AS 15169 leaking provider routes to peers"
+  ]
+}

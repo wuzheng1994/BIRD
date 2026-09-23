@@ -1,0 +1,14 @@
+{
+  "anomaly_type": "route_leak",
+  "root_cause": {
+    "leaking_as": 52025,
+    "leak_type": "provider_to_customer",
+    "abnormal_triplets": [
+      "64289 6461 28917"
+    ]
+  },
+  "description": "AS 52025 leaked traffic. Abnormal AS triplets detected: 64289 6461 28917",
+  "prefix": "77.105.167.0/24",
+  "start_time": "2025-11-10 18:08:14",
+  "end_time": "2025-11-11 20:45:24"
+}

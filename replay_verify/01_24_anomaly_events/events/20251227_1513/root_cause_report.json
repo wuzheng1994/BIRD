@@ -1,0 +1,14 @@
+{
+  "prefix": "121.91.63.0/24",
+  "start_time": "2025-12-27 15:13:20",
+  "end_time": "2025-12-27 16:08:24",
+  "anomaly_type": "route_leak",
+  "root_cause": {
+    "leaking_as": 58453,
+    "leak_type": "peer_to_provider",
+    "abnormal_triplets": [
+      "41095 58453 59257"
+    ]
+  },
+  "description": "AS 58453 leaked routes from its peer AS 41095 to its provider AS 59257. The abnormal triplet '41095 58453 59257' exhibits a peer-to-peer (rel=0) followed by customer-to-provider (rel=-1) pattern, violating valley-free routing. The origin AS 138423 is the legitimate owner of prefix 121.91.63.0/24. During the incident, a new path '41095 58453 59257 138423' emerged, while pre-incident paths primarily used either '38193 138423' (via AS 174, 6939, etc.) or '58453 59257 138423' (via other peers)."
+}

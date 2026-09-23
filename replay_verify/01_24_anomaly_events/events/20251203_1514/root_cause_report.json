@@ -1,0 +1,14 @@
+{
+  "anomaly_type": "route_leak",
+  "root_cause": {
+    "leaking_as": 58057,
+    "leak_type": "provider_to_customer",
+    "abnormal_triplets": [
+      "58057 6939 9498"
+    ]
+  },
+  "description": "AS 58057 leaked traffic. Abnormal AS triplets detected: 58057 6939 9498",
+  "prefix": "197.214.32.0/22",
+  "start_time": "2025-12-03 15:14:28",
+  "end_time": "2025-12-04 19:41:42"
+}

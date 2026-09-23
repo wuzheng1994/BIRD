@@ -1,0 +1,12 @@
+{
+  "prefix": "91.213.204.0/24",
+  "start_time": "2015-06-12 08:43:00",
+  "end_time": "2015-06-12 11:15:00",
+  "anomaly_type": "route_leak",
+  "root_cause": {
+    "leaking_as": 4788,
+    "leak_type": "provider_to_peer",
+    "abnormal_triplets": ["3549 4788 1257"]
+  },
+  "description": "AS 4788 leaked routes from its provider AS 3549 to its peer AS 1257, violating the valley-free routing principle. The original path 3549 1239 1257 8437 39393 (peer-to-customer relationship) was replaced with 3549 4788 1257 8437 39393 where AS 4788 (a customer of AS 3549) improperly announced provider routes to its peer AS 1257."
+}

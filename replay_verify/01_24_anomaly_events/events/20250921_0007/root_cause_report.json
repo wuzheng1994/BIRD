@@ -1,0 +1,8 @@
+{
+  "prefix": "204.92.234.0/23",
+  "start_time": "2025-09-21 00:07:27",
+  "end_time": "2025-09-21 12:48:24",
+  "anomaly_type": "other",
+  "root_cause": {},
+  "description": "The prefix 204.92.234.0/23 was being announced by AS 14843 before the event. After the event, the legitimate owner AS 32613 began announcing the prefix. The observed post-event origin AS (32613) equals the legitimate owner AS (32613), so this event is classified as 'other' — likely a correction where the legitimate owner reclaimed the prefix after AS 14843 was previously announcing it."
+}

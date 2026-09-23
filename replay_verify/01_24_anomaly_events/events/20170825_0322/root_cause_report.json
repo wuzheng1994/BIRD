@@ -1,0 +1,12 @@
+{
+  "prefix": "5.206.240.0/20",
+  "start_time": "2017-08-25 03:22:00",
+  "end_time": "2017-08-25 04:02:00",
+  "anomaly_type": "route_leak",
+  "root_cause": {
+    "leaking_as": 15169,
+    "leak_type": "provider_to_peer",
+    "abnormal_triplets": ["701 15169 21395"]
+  },
+  "description": "AS 15169 (Google) leaked routes from its provider AS 701 (Verizon/UUNET) to its peer AS 21395, violating the valley-free routing principle. The original path 3333 9002 57332 was replaced with 3333 1103 286 701 15169 21395 57332 where AS 15169 improperly announced provider routes (received from AS 701) to its peer AS 21395. The relationship pair (-1, 0) indicates a provider-to-peer leak where routes should not be re-announced between peers."
+}

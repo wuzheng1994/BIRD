@@ -1,0 +1,1343 @@
+{
+  "prefix": "108.171.108.0/23",
+  "start_time": "2024-10-30 13:16:00",
+  "end_time": "2024-10-30 13:40:00",
+  "anomaly_type": "route_leak",
+  "propagation_analysis": {
+    "key_transit_asns": [
+      5511,
+      34549,
+      2914,
+      1299,
+      206499,
+      52025,
+      3257,
+      32097,
+      12186
+    ],
+    "transit_as_descriptions": {},
+    "observed_peer_asns": [
+      202365,
+      206499,
+      34549,
+      34927,
+      58057
+    ],
+    "propagation_patterns": [
+      {
+        "pattern": "49981 -> 202365",
+        "example_paths": [
+          "202365 49981 137409 140952",
+          "202365 49981 137409 140952",
+          "202365 49981 137409 140952"
+        ],
+        "count": 3,
+        "raw_record_count": 16
+      },
+      {
+        "pattern": "49981 -> 5511 -> 2914 -> 34549 -> 206499 -> 202365",
+        "example_paths": [
+          "202365 206499 34549 2914 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 4
+      },
+      {
+        "pattern": "49981 -> 5511 -> 3257 -> 32097 -> 52025 -> 34927",
+        "example_paths": [
+          "34927 52025 32097 3257 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 4
+      },
+      {
+        "pattern": "49981 -> 5511 -> 34549 -> 206499 -> 202365",
+        "example_paths": [
+          "202365 206499 34549 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 4
+      },
+      {
+        "pattern": "49981 -> 5511 -> 1299 -> 34927",
+        "example_paths": [
+          "34927 1299 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 2
+      },
+      {
+        "pattern": "49981 -> 5511 -> 1299 -> 52025 -> 34927",
+        "example_paths": [
+          "34927 52025 1299 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 2
+      },
+      {
+        "pattern": "49981 -> 5511 -> 2914 -> 34549",
+        "example_paths": [
+          "34549 2914 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 2
+      },
+      {
+        "pattern": "49981 -> 5511 -> 2914 -> 34549 -> 206499",
+        "example_paths": [
+          "206499 34549 2914 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 2
+      },
+      {
+        "pattern": "49981 -> 5511 -> 2914 -> 34549 -> 58057",
+        "example_paths": [
+          "58057 34549 2914 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 2
+      },
+      {
+        "pattern": "49981 -> 5511 -> 3257 -> 32097 -> 12186 -> 34927",
+        "example_paths": [
+          "34927 12186 32097 3257 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 2
+      },
+      {
+        "pattern": "49981 -> 5511 -> 34549",
+        "example_paths": [
+          "34549 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 2
+      },
+      {
+        "pattern": "49981 -> 5511 -> 34549 -> 206499",
+        "example_paths": [
+          "206499 34549 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 2
+      },
+      {
+        "pattern": "49981 -> 5511 -> 34549 -> 58057",
+        "example_paths": [
+          "58057 34549 5511 49981 137409 140952"
+        ],
+        "count": 1,
+        "raw_record_count": 2
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": 1730294186,
+        "datetime": "2024-10-30 13:16:26 UTC",
+        "peer_asn": 49432,
+        "as_path": "49432 48362 1764 49981 137409 140952",
+        "prefix": "108.171.109.0/24",
+        "root_relative_delay_seconds": 0.0
+      },
+      {
+        "timestamp": 1730294186,
+        "datetime": "2024-10-30 13:16:26 UTC",
+        "peer_asn": 49432,
+        "as_path": "49432 48362 1764 49981 137409 140952",
+        "prefix": "108.171.108.0/24",
+        "root_relative_delay_seconds": 0.0
+      },
+      {
+        "timestamp": 1730294186,
+        "datetime": "2024-10-30 13:16:26 UTC",
+        "peer_asn": 49432,
+        "as_path": "49432 48362 1764 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 0.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 34549,
+        "as_path": "34549 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 34927,
+        "as_path": "34927 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 59919,
+        "as_path": "59919 9002 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 206499,
+        "as_path": "206499 34549 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 22652,
+        "as_path": "22652 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 22652,
+        "as_path": "22652 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 14907,
+        "as_path": "14907 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 49420,
+        "as_path": "49420 15830 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 34854,
+        "as_path": "34854 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 29504,
+        "as_path": "29504 39392 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 57821,
+        "as_path": "57821 12586 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 202365,
+        "as_path": "202365 206499 34549 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 29504,
+        "as_path": "29504 15935 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 29504,
+        "as_path": "29504 15935 9002 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294214,
+        "datetime": "2024-10-30 13:16:54 UTC",
+        "peer_asn": 58057,
+        "as_path": "58057 34549 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 28.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 65511 140096 917 60068 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 9049 57304 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 22652,
+        "as_path": "22652 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 852,
+        "as_path": "852 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 15562,
+        "as_path": "15562 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 7018,
+        "as_path": "7018 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 852,
+        "as_path": "852 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 59919,
+        "as_path": "59919 9002 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 14907,
+        "as_path": "14907 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 1403,
+        "as_path": "1403 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 13830,
+        "as_path": "13830 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 49420,
+        "as_path": "49420 5617 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294215,
+        "datetime": "2024-10-30 13:16:55 UTC",
+        "peer_asn": 29504,
+        "as_path": "29504 15935 9002 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 29.0
+      },
+      {
+        "timestamp": 1730294216,
+        "datetime": "2024-10-30 13:16:56 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 65511 140096 917 60068 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 30.0
+      },
+      {
+        "timestamp": 1730294216,
+        "datetime": "2024-10-30 13:16:56 UTC",
+        "peer_asn": 13830,
+        "as_path": "13830 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 30.0
+      },
+      {
+        "timestamp": 1730294217,
+        "datetime": "2024-10-30 13:16:57 UTC",
+        "peer_asn": 59919,
+        "as_path": "59919 9002 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 31.0
+      },
+      {
+        "timestamp": 1730294217,
+        "datetime": "2024-10-30 13:16:57 UTC",
+        "peer_asn": 1403,
+        "as_path": "1403 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 31.0
+      },
+      {
+        "timestamp": 1730294217,
+        "datetime": "2024-10-30 13:16:57 UTC",
+        "peer_asn": 13830,
+        "as_path": "13830 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 31.0
+      },
+      {
+        "timestamp": 1730294217,
+        "datetime": "2024-10-30 13:16:57 UTC",
+        "peer_asn": 14907,
+        "as_path": "14907 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 31.0
+      },
+      {
+        "timestamp": 1730294217,
+        "datetime": "2024-10-30 13:16:57 UTC",
+        "peer_asn": 34854,
+        "as_path": "34854 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 31.0
+      },
+      {
+        "timestamp": 1730294217,
+        "datetime": "2024-10-30 13:16:57 UTC",
+        "peer_asn": 29504,
+        "as_path": "29504 15935 9002 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 31.0
+      },
+      {
+        "timestamp": 1730294217,
+        "datetime": "2024-10-30 13:16:57 UTC",
+        "peer_asn": 29504,
+        "as_path": "29504 15935 9002 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 31.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 60068 49981 137409 140952",
+        "prefix": "108.171.109.0/24",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 60068 49981 137409 140952",
+        "prefix": "108.171.108.0/24",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 65511 140096 917 60068 49981 137409 140952",
+        "prefix": "108.171.109.0/24",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 65511 140096 917 60068 49981 137409 140952",
+        "prefix": "108.171.108.0/24",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 9049 57304 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 9049 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 22652,
+        "as_path": "22652 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 15562,
+        "as_path": "15562 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 59919,
+        "as_path": "59919 9002 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 34854,
+        "as_path": "34854 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 49420,
+        "as_path": "49420 5617 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294218,
+        "datetime": "2024-10-30 13:16:58 UTC",
+        "peer_asn": 29504,
+        "as_path": "29504 15935 9002 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 32.0
+      },
+      {
+        "timestamp": 1730294219,
+        "datetime": "2024-10-30 13:16:59 UTC",
+        "peer_asn": 34927,
+        "as_path": "34927 52025 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 33.0
+      },
+      {
+        "timestamp": 1730294219,
+        "datetime": "2024-10-30 13:16:59 UTC",
+        "peer_asn": 34927,
+        "as_path": "34927 52025 32097 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 33.0
+      },
+      {
+        "timestamp": 1730294219,
+        "datetime": "2024-10-30 13:16:59 UTC",
+        "peer_asn": 57381,
+        "as_path": "57381 50304 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 33.0
+      },
+      {
+        "timestamp": 1730294219,
+        "datetime": "2024-10-30 13:16:59 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 9049 57304 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 33.0
+      },
+      {
+        "timestamp": 1730294219,
+        "datetime": "2024-10-30 13:16:59 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 9049 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 33.0
+      },
+      {
+        "timestamp": 1730294219,
+        "datetime": "2024-10-30 13:16:59 UTC",
+        "peer_asn": 14907,
+        "as_path": "14907 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 33.0
+      },
+      {
+        "timestamp": 1730294219,
+        "datetime": "2024-10-30 13:16:59 UTC",
+        "peer_asn": 49420,
+        "as_path": "49420 15830 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 33.0
+      },
+      {
+        "timestamp": 1730294219,
+        "datetime": "2024-10-30 13:16:59 UTC",
+        "peer_asn": 49420,
+        "as_path": "49420 15830 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 33.0
+      },
+      {
+        "timestamp": 1730294219,
+        "datetime": "2024-10-30 13:16:59 UTC",
+        "peer_asn": 49420,
+        "as_path": "49420 5617 1299 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 33.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 34549,
+        "as_path": "34549 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 34927,
+        "as_path": "34927 52025 32097 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 34927,
+        "as_path": "34927 12186 32097 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 9049 57304 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 852,
+        "as_path": "852 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 15562,
+        "as_path": "15562 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 1403,
+        "as_path": "1403 6461 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 206499,
+        "as_path": "206499 34549 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 13830,
+        "as_path": "13830 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 49420,
+        "as_path": "49420 15830 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 49420,
+        "as_path": "49420 15830 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 202365,
+        "as_path": "202365 206499 34549 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294220,
+        "datetime": "2024-10-30 13:17:00 UTC",
+        "peer_asn": 58057,
+        "as_path": "58057 34549 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 34.0
+      },
+      {
+        "timestamp": 1730294221,
+        "datetime": "2024-10-30 13:17:01 UTC",
+        "peer_asn": 852,
+        "as_path": "852 3257 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 35.0
+      },
+      {
+        "timestamp": 1730294221,
+        "datetime": "2024-10-30 13:17:01 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 9049 57304 3356 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 35.0
+      },
+      {
+        "timestamp": 1730294222,
+        "datetime": "2024-10-30 13:17:02 UTC",
+        "peer_asn": 55720,
+        "as_path": "55720 132825 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 36.0
+      },
+      {
+        "timestamp": 1730294224,
+        "datetime": "2024-10-30 13:17:04 UTC",
+        "peer_asn": 132825,
+        "as_path": "132825 2914 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 38.0
+      },
+      {
+        "timestamp": 1730294243,
+        "datetime": "2024-10-30 13:17:23 UTC",
+        "peer_asn": 1403,
+        "as_path": "1403 174 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 57.0
+      },
+      {
+        "timestamp": 1730294250,
+        "datetime": "2024-10-30 13:17:30 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 28917 49981 137409 140952",
+        "prefix": "108.171.109.0/24",
+        "root_relative_delay_seconds": 64.0
+      },
+      {
+        "timestamp": 1730294250,
+        "datetime": "2024-10-30 13:17:30 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 28917 49981 137409 140952",
+        "prefix": "108.171.108.0/24",
+        "root_relative_delay_seconds": 64.0
+      },
+      {
+        "timestamp": 1730294250,
+        "datetime": "2024-10-30 13:17:30 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 28917 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 64.0
+      },
+      {
+        "timestamp": 1730294265,
+        "datetime": "2024-10-30 13:17:45 UTC",
+        "peer_asn": 202365,
+        "as_path": "202365 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 79.0
+      },
+      {
+        "timestamp": 1730294270,
+        "datetime": "2024-10-30 13:17:50 UTC",
+        "peer_asn": 202297,
+        "as_path": "202297 47232 174 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 84.0
+      },
+      {
+        "timestamp": 1730294276,
+        "datetime": "2024-10-30 13:17:56 UTC",
+        "peer_asn": 202365,
+        "as_path": "202365 49981 137409 140952",
+        "prefix": "108.171.108.0/24",
+        "root_relative_delay_seconds": 90.0
+      },
+      {
+        "timestamp": 1730294276,
+        "datetime": "2024-10-30 13:17:56 UTC",
+        "peer_asn": 202365,
+        "as_path": "202365 49981 137409 140952",
+        "prefix": "108.171.109.0/24",
+        "root_relative_delay_seconds": 90.0
+      },
+      {
+        "timestamp": 1730294277,
+        "datetime": "2024-10-30 13:17:57 UTC",
+        "peer_asn": 202297,
+        "as_path": "202297 47232 174 5511 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 91.0
+      },
+      {
+        "timestamp": 1730294295,
+        "datetime": "2024-10-30 13:18:15 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 12389 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 109.0
+      },
+      {
+        "timestamp": 1730294295,
+        "datetime": "2024-10-30 13:18:15 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 12389 49981 137409 140952",
+        "prefix": "108.171.108.0/24",
+        "root_relative_delay_seconds": 109.0
+      },
+      {
+        "timestamp": 1730294295,
+        "datetime": "2024-10-30 13:18:15 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 12389 49981 137409 140952",
+        "prefix": "108.171.109.0/24",
+        "root_relative_delay_seconds": 109.0
+      },
+      {
+        "timestamp": 1730294311,
+        "datetime": "2024-10-30 13:18:31 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 12389 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 125.0
+      },
+      {
+        "timestamp": 1730294311,
+        "datetime": "2024-10-30 13:18:31 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 12389 49981 137409 140952",
+        "prefix": "108.171.108.0/24",
+        "root_relative_delay_seconds": 125.0
+      },
+      {
+        "timestamp": 1730294311,
+        "datetime": "2024-10-30 13:18:31 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 48858 12389 49981 137409 140952",
+        "prefix": "108.171.109.0/24",
+        "root_relative_delay_seconds": 125.0
+      },
+      {
+        "timestamp": 1730294779,
+        "datetime": "2024-10-30 13:26:19 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 60068 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 593.0
+      },
+      {
+        "timestamp": 1730294779,
+        "datetime": "2024-10-30 13:26:19 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 65511 140096 917 60068 49981 137409 140952",
+        "prefix": "108.171.108.0/23",
+        "root_relative_delay_seconds": 593.0
+      },
+      {
+        "timestamp": 1730294782,
+        "datetime": "2024-10-30 13:26:22 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 60068 49981 137409 140952",
+        "prefix": "108.171.109.0/24",
+        "root_relative_delay_seconds": 596.0
+      },
+      {
+        "timestamp": 1730294782,
+        "datetime": "2024-10-30 13:26:22 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 60068 49981 137409 140952",
+        "prefix": "108.171.108.0/24",
+        "root_relative_delay_seconds": 596.0
+      },
+      {
+        "timestamp": 1730294782,
+        "datetime": "2024-10-30 13:26:22 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 65511 140096 917 60068 49981 137409 140952",
+        "prefix": "108.171.109.0/24",
+        "root_relative_delay_seconds": 596.0
+      },
+      {
+        "timestamp": 1730294782,
+        "datetime": "2024-10-30 13:26:22 UTC",
+        "peer_asn": 131477,
+        "as_path": "131477 65511 140096 917 60068 49981 137409 140952",
+        "prefix": "108.171.108.0/24",
+        "root_relative_delay_seconds": 596.0
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 4.627,
+      "average_path_length_after": 6.49,
+      "path_inflation_rate": "40.3% increase",
+      "notes": "Computed from supplied pre-event RIB paths and post-event observations containing the root AS."
+    },
+    "geographic_analysis": {
+      "transit_network_coverage": "Unavailable: no AS geolocation metadata supplied",
+      "propagation_scope": "global",
+      "leak_origin": "Unknown: no AS geolocation metadata supplied"
+    },
+    "data_summary": {
+      "path_pair_count": 74,
+      "raw_root_related_update_count": 46,
+      "deduplicated_root_related_update_count": 15,
+      "normal_baseline_path_count": 51
+    },
+    "propagation_edge_probabilities": {
+      "direction": "root_as_to_observer_as",
+      "sample": "deduplicated root-related UPDATEs, keyed by (upd_prefix, update_path)",
+      "posterior": "Beta(1 + edge_update_count, 1 + source_update_count - edge_update_count)",
+      "edges": [
+        {
+          "from_as": 2914,
+          "to_as": 34549,
+          "posterior": "Beta(5, 1)",
+          "propagation_probability": 0.833333,
+          "edge_update_count": 4,
+          "source_update_count": 4
+        },
+        {
+          "from_as": 49981,
+          "to_as": 5511,
+          "posterior": "Beta(13, 4)",
+          "propagation_probability": 0.764706,
+          "edge_update_count": 12,
+          "source_update_count": 15
+        },
+        {
+          "from_as": 206499,
+          "to_as": 202365,
+          "posterior": "Beta(3, 1)",
+          "propagation_probability": 0.75,
+          "edge_update_count": 2,
+          "source_update_count": 2
+        },
+        {
+          "from_as": 3257,
+          "to_as": 32097,
+          "posterior": "Beta(3, 1)",
+          "propagation_probability": 0.75,
+          "edge_update_count": 2,
+          "source_update_count": 2
+        },
+        {
+          "from_as": 52025,
+          "to_as": 34927,
+          "posterior": "Beta(3, 1)",
+          "propagation_probability": 0.75,
+          "edge_update_count": 2,
+          "source_update_count": 2
+        },
+        {
+          "from_as": 12186,
+          "to_as": 34927,
+          "posterior": "Beta(2, 1)",
+          "propagation_probability": 0.666667,
+          "edge_update_count": 1,
+          "source_update_count": 1
+        },
+        {
+          "from_as": 34549,
+          "to_as": 206499,
+          "posterior": "Beta(5, 3)",
+          "propagation_probability": 0.625,
+          "edge_update_count": 4,
+          "source_update_count": 6
+        },
+        {
+          "from_as": 1299,
+          "to_as": 34927,
+          "posterior": "Beta(2, 2)",
+          "propagation_probability": 0.5,
+          "edge_update_count": 1,
+          "source_update_count": 2
+        },
+        {
+          "from_as": 1299,
+          "to_as": 52025,
+          "posterior": "Beta(2, 2)",
+          "propagation_probability": 0.5,
+          "edge_update_count": 1,
+          "source_update_count": 2
+        },
+        {
+          "from_as": 32097,
+          "to_as": 12186,
+          "posterior": "Beta(2, 2)",
+          "propagation_probability": 0.5,
+          "edge_update_count": 1,
+          "source_update_count": 2
+        },
+        {
+          "from_as": 32097,
+          "to_as": 52025,
+          "posterior": "Beta(2, 2)",
+          "propagation_probability": 0.5,
+          "edge_update_count": 1,
+          "source_update_count": 2
+        },
+        {
+          "from_as": 34549,
+          "to_as": 58057,
+          "posterior": "Beta(3, 5)",
+          "propagation_probability": 0.375,
+          "edge_update_count": 2,
+          "source_update_count": 6
+        },
+        {
+          "from_as": 5511,
+          "to_as": 2914,
+          "posterior": "Beta(5, 9)",
+          "propagation_probability": 0.357143,
+          "edge_update_count": 4,
+          "source_update_count": 12
+        },
+        {
+          "from_as": 5511,
+          "to_as": 34549,
+          "posterior": "Beta(5, 9)",
+          "propagation_probability": 0.357143,
+          "edge_update_count": 4,
+          "source_update_count": 12
+        },
+        {
+          "from_as": 49981,
+          "to_as": 202365,
+          "posterior": "Beta(4, 13)",
+          "propagation_probability": 0.235294,
+          "edge_update_count": 3,
+          "source_update_count": 15
+        },
+        {
+          "from_as": 5511,
+          "to_as": 1299,
+          "posterior": "Beta(3, 11)",
+          "propagation_probability": 0.214286,
+          "edge_update_count": 2,
+          "source_update_count": 12
+        },
+        {
+          "from_as": 5511,
+          "to_as": 3257,
+          "posterior": "Beta(3, 11)",
+          "propagation_probability": 0.214286,
+          "edge_update_count": 2,
+          "source_update_count": 12
+        }
+      ]
+    },
+    "propagation_path_ranking": {
+      "candidate_constraint": "Each candidate is a complete update_path observed in paths.json; graph edges are not recombined.",
+      "primary_ranking": "Sum log(leak-edge posterior mean / normal-baseline edge posterior mean) over UPDATE edges absent from paired rib_path values.",
+      "secondary_ranking": "Geometric mean of the candidate's propagation-edge probabilities; then its minimum edge probability and raw UPDATE frequency.",
+      "paths": [
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            3257,
+            32097,
+            52025,
+            34927
+          ],
+          "update_path": "34927 52025 32097 3257 5511 49981 137409 140952",
+          "leak_specificity_score": 16.148994,
+          "per_hop_propagation_probability": 0.540401,
+          "minimum_edge_probability": 0.214286,
+          "raw_update_record_count": 4,
+          "rank": 1
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            3257,
+            32097,
+            12186,
+            34927
+          ],
+          "update_path": "34927 12186 32097 3257 5511 49981 137409 140952",
+          "leak_specificity_score": 15.743528,
+          "per_hop_propagation_probability": 0.52782,
+          "minimum_edge_probability": 0.214286,
+          "raw_update_record_count": 2,
+          "rank": 2
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            1299,
+            52025,
+            34927
+          ],
+          "update_path": "34927 52025 1299 5511 49981 137409 140952",
+          "leak_specificity_score": 13.913303,
+          "per_hop_propagation_probability": 0.497886,
+          "minimum_edge_probability": 0.214286,
+          "raw_update_record_count": 2,
+          "rank": 3
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            2914,
+            34549,
+            206499,
+            202365
+          ],
+          "update_path": "202365 206499 34549 2914 5511 49981 137409 140952",
+          "leak_specificity_score": 13.104728,
+          "per_hop_propagation_probability": 0.639174,
+          "minimum_edge_probability": 0.357143,
+          "raw_update_record_count": 4,
+          "rank": 4
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            2914,
+            34549,
+            206499
+          ],
+          "update_path": "206499 34549 2914 5511 49981 137409 140952",
+          "leak_specificity_score": 13.104728,
+          "per_hop_propagation_probability": 0.614128,
+          "minimum_edge_probability": 0.357143,
+          "raw_update_record_count": 2,
+          "rank": 5
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            2914,
+            34549
+          ],
+          "update_path": "34549 2914 5511 49981 137409 140952",
+          "leak_specificity_score": 13.104728,
+          "per_hop_propagation_probability": 0.610546,
+          "minimum_edge_probability": 0.357143,
+          "raw_update_record_count": 2,
+          "rank": 6
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            2914,
+            34549,
+            58057
+          ],
+          "update_path": "58057 34549 2914 5511 49981 137409 140952",
+          "leak_specificity_score": 13.104728,
+          "per_hop_propagation_probability": 0.540501,
+          "minimum_edge_probability": 0.357143,
+          "raw_update_record_count": 2,
+          "rank": 7
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            1299,
+            34927
+          ],
+          "update_path": "34927 1299 5511 49981 137409 140952",
+          "leak_specificity_score": 11.677612,
+          "per_hop_propagation_probability": 0.43433,
+          "minimum_edge_probability": 0.214286,
+          "raw_update_record_count": 2,
+          "rank": 8
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            34549,
+            206499,
+            202365
+          ],
+          "update_path": "202365 206499 34549 5511 49981 137409 140952",
+          "leak_specificity_score": 10.358212,
+          "per_hop_propagation_probability": 0.598163,
+          "minimum_edge_probability": 0.357143,
+          "raw_update_record_count": 4,
+          "rank": 9
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            34549,
+            206499
+          ],
+          "update_path": "206499 34549 5511 49981 137409 140952",
+          "leak_specificity_score": 10.358212,
+          "per_hop_propagation_probability": 0.554718,
+          "minimum_edge_probability": 0.357143,
+          "raw_update_record_count": 2,
+          "rank": 10
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            34549
+          ],
+          "update_path": "34549 5511 49981 137409 140952",
+          "leak_specificity_score": 10.358212,
+          "per_hop_propagation_probability": 0.522599,
+          "minimum_edge_probability": 0.357143,
+          "raw_update_record_count": 2,
+          "rank": 11
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            5511,
+            34549,
+            58057
+          ],
+          "update_path": "58057 34549 5511 49981 137409 140952",
+          "leak_specificity_score": 10.358212,
+          "per_hop_propagation_probability": 0.467867,
+          "minimum_edge_probability": 0.357143,
+          "raw_update_record_count": 2,
+          "rank": 12
+        },
+        {
+          "prefix": "108.171.108.0/24",
+          "propagation_path": [
+            49981,
+            202365
+          ],
+          "update_path": "202365 49981 137409 140952",
+          "leak_specificity_score": 6.43304,
+          "per_hop_propagation_probability": 0.235294,
+          "minimum_edge_probability": 0.235294,
+          "raw_update_record_count": 6,
+          "rank": 13
+        },
+        {
+          "prefix": "108.171.109.0/24",
+          "propagation_path": [
+            49981,
+            202365
+          ],
+          "update_path": "202365 49981 137409 140952",
+          "leak_specificity_score": 6.43304,
+          "per_hop_propagation_probability": 0.235294,
+          "minimum_edge_probability": 0.235294,
+          "raw_update_record_count": 6,
+          "rank": 14
+        },
+        {
+          "prefix": "108.171.108.0/23",
+          "propagation_path": [
+            49981,
+            202365
+          ],
+          "update_path": "202365 49981 137409 140952",
+          "leak_specificity_score": 6.43304,
+          "per_hop_propagation_probability": 0.235294,
+          "minimum_edge_probability": 0.235294,
+          "raw_update_record_count": 4,
+          "rank": 15
+        }
+      ]
+    },
+    "leaking_as": 49981,
+    "leaked_to": [
+      202365,
+      5511
+    ],
+    "direct_upstream": null,
+    "leak_direction": "provider_to_peer"
+  },
+  "impact_assessment": {
+    "visibility": "15 deduplicated root-related UPDATEs (46 raw records)",
+    "reachability_impact": "Observed propagation paths are ranked by their leak-specificity relative to the normal RIB baseline.",
+    "duration_impact": "596.0 seconds of root-containing post-event observations",
+    "mitigation_difficulty": "Requires AS-relationship and operator context"
+  },
+  "recommendations": [
+    "Prioritize highly ranked observed propagation paths for operator review.",
+    "Treat duplicate UPDATE records as frequency support, not independent Bayesian samples.",
+    "Expand and validate the pre-event normal RIB baseline before automated mitigation decisions."
+  ],
+  "leak_start_time": "2024-10-30 13:16:26 UTC"
+}

@@ -1,0 +1,12 @@
+{
+  "prefix": "113.20.40.0/22",
+  "start_time": "2025-11-20 12:40:06",
+  "end_time": "2025-11-21 01:17:03",
+  "anomaly_type": "prefix_hijack",
+  "root_cause": {
+    "attacker_as": 7029,
+    "victim_as": 397373,
+    "network_address": "113.20.40.0"
+  },
+  "description": "AS 7029 hijacked prefix 113.20.40.0/22. The legitimate origin is AS 397373, but AS 7029 is announcing this prefix. Analysis of the highest-scored path changes shows the origin AS changed from 397373 to 7029 in multiple observed paths after the anomaly event."
+}

@@ -1,0 +1,12 @@
+{
+  "prefix": "150.241.121.0/24",
+  "start_time": "2025-10-03 00:57:57",
+  "end_time": "2025-10-03 15:17:28",
+  "anomaly_type": "prefix_hijack",
+  "root_cause": {
+    "attacker_as": 401152,
+    "victim_as": 20473,
+    "network_address": "150.241.121.0"
+  },
+  "description": "AS 401152 hijacked prefix 150.241.121.0/24. The legitimate origin is AS 20473, but AS 401152 is announcing this prefix."
+}

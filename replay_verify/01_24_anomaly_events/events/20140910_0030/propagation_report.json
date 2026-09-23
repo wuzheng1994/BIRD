@@ -1,0 +1,71 @@
+{
+  "prefix": "177.200.2.0/23",
+  "start_time": "2014-09-10 00:30:00",
+  "end_time": "2014-09-10 11:30:00",
+  "hijack_start_time": "2014-09-10 00:30:00 UTC",
+  "propagation_analysis": {
+    "hijacker_as": 57807,
+    "direct_upstream": 15685,
+    "key_transit_asns": [
+      6881,
+      6939,
+      13110,
+      15685,
+      44514
+    ],
+    "transit_as_descriptions": {
+      "6881": "Bharti Airtel (India)",
+      "15685": "Telecom Argentina",
+      "6939": "Hurricane Electric",
+      "13110": "Telecom Argentina S.A.",
+      "44514": "Telecom Argentina S.A.",
+      "57807": "Telecom Argentina S.A. (hijacker)",
+      "52775": "Telecom Argentina S.A. (victim)"
+    },
+    "observed_peer_asns": [
+      6881
+    ],
+    "propagation_patterns": [
+      {
+        "pattern": "Hijack propagation through 6881 15685 6939 13110 44514 57807",
+        "example_paths": [
+          "6881 15685 6939 13110 44514 57807"
+        ],
+        "count": 4
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": "1410309298",
+        "datetime": "2014-09-10 08:34:58 UTC",
+        "peer_asn": 6881,
+        "as_path": "6881 15685 6939 13110 44514 57807",
+        "prefix": "177.200.2.0/23"
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 7.87,
+      "average_path_length_after": 6,
+      "path_inflation_rate": "23.7% decrease",
+      "notes": "Hijacked paths show different transit networks compared to legitimate paths"
+    },
+    "geographic_analysis": {
+      "hijacker_location": "Argentina (AS 57807 - Telecom Argentina S.A.)",
+      "transit_network_coverage": "Primarily through Telecom Argentina and Hurricane Electric",
+      "propagation_scope": "Limited (observed by single peer AS 6881)"
+    }
+  },
+  "impact_assessment": {
+    "visibility": "Observed by 1 peer AS(es)",
+    "reachability_impact": "Traffic to prefix 177.200.2.0/23 was redirected to hijacker AS 57807",
+    "duration_impact": "Event lasted approximately 11 hours from 2014-09-10 00:30:00 to 2014-09-10 11:30:00",
+    "mitigation_difficulty": "Moderate - requires coordination with upstream providers to filter hijacked announcements"
+  },
+  "recommendations": [
+    "Notify direct upstream AS 6881 to filter announcements from AS 57807 for prefix 177.200.2.0/23",
+    "Coordinate with Tier 1 networks to implement prefix filters",
+    "Monitor for similar hijack attempts targeting AS 52775's address space",
+    "Implement RPKI for prefix validation to prevent unauthorized announcements",
+    "Enforce AS-path filtering policies to detect origin AS changes"
+  ]
+}

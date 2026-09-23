@@ -1,0 +1,15 @@
+{
+  "prefix": "97.107.66.0/23",
+  "start_time": "2019-06-24 10:30:00",
+  "end_time": "2019-06-24 12:39:00",
+  "anomaly_type": "route_leak",
+  "root_cause": {
+    "leaking_as": 396531,
+    "leak_type": "provider_to_provider",
+    "abnormal_triplets": [
+      "701 396531 33154",
+      "3333 1273 701"
+    ]
+  },
+  "description": "A route leak occurred for prefix 97.107.66.0/23 (legitimate origin AS 393436). The original path '3333 6939 10835 393436' was replaced with '3333 1273 701 396531 33154 3356 393436'. Two abnormal triplets were detected: (1) Triplet '701 396531 33154' has relationship pair (-1, 1) — AS 701 (provider) → AS 396531 (customer) → AS 33154 (provider), where AS 396531 improperly re-advertised its provider's (AS 701) routes to another provider (AS 33154), a provider-to-provider leak. (2) Triplet '3333 1273 701' has relationship pair (-1, 0) — AS 3333 (provider) → AS 1273 (customer) → AS 701 (peer), where AS 1273 improperly leaked its provider's routes to a peer, a provider-to-peer leak. The primary leaking AS is 396531, which received the route from its provider AS 701 and leaked it to its own provider AS 33154."
+}

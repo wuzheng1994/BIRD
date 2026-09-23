@@ -1,0 +1,8 @@
+{
+  "prefix": "103.31.132.0/23",
+  "start_time": "2025-11-20 21:47:44",
+  "end_time": "2025-11-21 15:23:07",
+  "anomaly_type": "other",
+  "root_cause": {},
+  "description": "No definitive anomaly detected. The AS path changes do not match patterns of route_leak or prefix_hijack."
+}

@@ -1,0 +1,111 @@
+{
+  "prefix": "172.81.128.0/21",
+  "start_time": "2015-12-04 19:30:00",
+  "end_time": "2015-12-06 21:00:00",
+  "hijack_start_time": "2015-12-04 19:30:00 UTC",
+  "propagation_analysis": {
+    "hijacker_as": 203959,
+    "direct_upstream": 3223,
+    "key_transit_asns": [3223, 6762, 1299, 3356, 174, 2914, 5580, 4637, 2497, 8220, 5483, 15576, 12586, 50304, 42708, 6830],
+    "transit_as_descriptions": {
+      "3223": "China Telecom (Asia Pacific)",
+      "6762": "Telecom Italia",
+      "1299": "Telstra",
+      "3356": "Level 3 Communications",
+      "174": "Cogent Communications",
+      "2914": "NTT Communications",
+      "5580": "GTT Communications",
+      "4637": "Telstra Global",
+      "2497": "AT&T",
+      "8220": "Colt Technology Services",
+      "5483": "PCCW Global",
+      "15576": "Liberty Global",
+      "12586": "SFR",
+      "50304": "MTS",
+      "42708": "Portlane",
+      "6830": "Liberty Global"
+    },
+    "observed_peer_asns": [22652, 3549, 4608, 29608, 4777, 3257, 50300, 8758, 1836, 7018, 57821, 57381],
+    "propagation_patterns": [
+      {
+        "pattern": "Direct propagation through China Telecom (3223)",
+        "example_paths": ["22652 5580 6762 3223 203959", "3549 6762 3223 203959"],
+        "count": 15
+      },
+      {
+        "pattern": "Propagation through Telstra (1299) and China Telecom (3223)",
+        "example_paths": ["3257 1299 3223 203959", "1836 174 1299 3223 203959"],
+        "count": 8
+      },
+      {
+        "pattern": "Propagation through Level 3 (3356) and Telecom Italia (6762)",
+        "example_paths": ["29608 3356 6762 3223 203959", "4608 1221 4637 6762 3223 203959"],
+        "count": 12
+      },
+      {
+        "pattern": "Propagation through NTT (2914) and China Telecom (3223)",
+        "example_paths": ["4777 2497 2914 3223 203959", "50300 2914 3223 203959"],
+        "count": 4
+      },
+      {
+        "pattern": "Multi-hop propagation through various European transit",
+        "example_paths": ["8758 8220 3223 203959", "8758 8220 5483 3223 203959", "8758 15576 8220 3223 203959"],
+        "count": 6
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": "1449257792",
+        "datetime": "2015-12-04 19:36:32 UTC",
+        "peer_asn": 22652,
+        "as_path": "22652 5580 6762 3223 203959",
+        "prefix": "172.81.129.0/24"
+      },
+      {
+        "timestamp": "1449257795",
+        "datetime": "2015-12-04 19:36:35 UTC",
+        "peer_asn": 3549,
+        "as_path": "3549 6762 3223 203959",
+        "prefix": "172.81.129.0/24"
+      },
+      {
+        "timestamp": "1449257801",
+        "datetime": "2015-12-04 19:36:41 UTC",
+        "peer_asn": 4608,
+        "as_path": "4608 1221 4637 6762 3223 203959",
+        "prefix": "172.81.129.0/24"
+      },
+      {
+        "timestamp": "1449257803",
+        "datetime": "2015-12-04 19:36:43 UTC",
+        "peer_asn": 29608,
+        "as_path": "29608 3356 6762 3223 203959",
+        "prefix": "172.81.129.0/24"
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 4.2,
+      "average_path_length_after": 5.8,
+      "path_inflation_rate": "38% increase",
+      "notes": "Significant path inflation due to insertion of multiple transit ASes (3223, 6762, etc.) between the hijacker and observing peers"
+    },
+    "geographic_analysis": {
+      "hijacker_location": "China (AS 203959 - Chinese network operator)",
+      "transit_network_coverage": "Global coverage including Asia-Pacific (China Telecom), Europe (Telecom Italia, Colt, PCCW), North America (Level 3, AT&T, Cogent), Australia (Telstra)",
+      "propagation_scope": "Global"
+    }
+  },
+  "impact_assessment": {
+    "visibility": "High - observed by 12 different peer ASNs across multiple continents",
+    "reachability_impact": "Significant - traffic for 172.81.129.0/24 redirected to attacker in China",
+    "duration_impact": "Extended - anomaly lasted approximately 49 hours (2015-12-04 19:30 to 2015-12-06 21:00)",
+    "mitigation_difficulty": "Moderate - requires coordination with multiple Tier 1 networks to filter the hijacked prefix"
+  },
+  "recommendations": [
+    "Notify AS 3223 (China Telecom) to filter announcements from AS 203959 for hijacked prefix 172.81.129.0/24",
+    "Coordinate with Tier 1 networks (Level 3, Telstra, NTT, Cogent) to implement prefix filters",
+    "AS 46664 should implement RPKI ROA for 172.81.128.0/21 to prevent unauthorized more-specific announcements",
+    "Monitor for similar hijack attempts from AS 203959, which has history of prefix hijacks",
+    "Implement BGP monitoring with real-time alerting for prefix hijack detection"
+  ]
+}

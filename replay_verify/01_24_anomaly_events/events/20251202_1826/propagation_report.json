@@ -1,0 +1,56 @@
+{
+  "prefix": "182.160.124.0/24",
+  "start_time": "2025-12-02 18:26:50",
+  "end_time": "2025-12-02 19:01:45",
+  "propagation_analysis": {
+    "observed_asns": [202365, 6939, 139009, 24323],
+    "unknown_patterns": [
+      "Path change from 202365 50673 9498 139009 24323 to 202365 6939 139009 24323 without clear anomaly pattern"
+    ],
+    "key_transit_asns": [6939, 139009],
+    "transit_as_descriptions": {
+      "6939": "Hurricane Electric",
+      "139009": "Transit provider",
+      "24323": "Prefix owner (CBN)"
+    },
+    "observed_peer_asns": [202365],
+    "propagation_patterns": [
+      {
+        "pattern": "Direct propagation through AS 6939",
+        "example_paths": ["202365 6939 139009 24323"],
+        "count": 1
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": "1764701781",
+        "datetime": "2025-12-02 19:01:45 UTC",
+        "peer_asn": 202365,
+        "as_path": "202365 6939 139009 24323",
+        "prefix": "182.160.124.0/24"
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 4.0,
+      "average_path_length_after": 4.0,
+      "path_inflation_rate": "0% increase",
+      "notes": "Path length remained unchanged (4 AS hops)"
+    },
+    "geographic_analysis": {
+      "transit_network_coverage": "Global transit through Hurricane Electric (AS 6939)",
+      "propagation_scope": "Limited (observed by single peer AS 202365)"
+    }
+  },
+  "impact_assessment": {
+    "visibility": "Very low (observed by only 1 peer)",
+    "reachability_impact": "Minimal - path changed but origin AS remains legitimate owner",
+    "duration_impact": "Short (35 minutes)",
+    "mitigation_difficulty": "Low - no malicious activity detected"
+  },
+  "recommendations": [
+    "Monitor for similar routing changes to detect patterns",
+    "Verify AS business relationships for AS 50673 and AS 9498 to understand routing policy changes",
+    "Consider implementing BGP monitoring for prefix 182.160.124.0/24",
+    "No immediate mitigation required as no malicious activity was detected"
+  ]
+}

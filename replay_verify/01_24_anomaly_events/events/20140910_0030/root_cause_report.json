@@ -1,0 +1,12 @@
+{
+  "prefix": "177.200.2.0/23",
+  "start_time": "2014-09-10 00:30:00",
+  "end_time": "2014-09-10 11:30:00",
+  "anomaly_type": "prefix_hijack",
+  "root_cause": {
+    "attacker_as": 57807,
+    "victim_as": 52775,
+    "network_address": "177.200.2.0"
+  },
+  "description": "AS 57807 hijacked prefix 177.200.2.0/23. The legitimate origin is AS 52775, but AS 57807 is announcing this prefix. Reference cases show AS 57807 has been involved in multiple prefix hijack events targeting AS 52775's address space."
+}

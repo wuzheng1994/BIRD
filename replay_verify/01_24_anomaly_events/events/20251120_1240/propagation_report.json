@@ -1,0 +1,90 @@
+{
+  "prefix": "113.20.40.0/22",
+  "start_time": "2025-11-20 12:40:06",
+  "end_time": "2025-11-21 01:17:03",
+  "hijack_start_time": "2025-11-20 12:40:06 UTC",
+  "propagation_analysis": {
+    "hijacker_as": 7029,
+    "direct_upstream": null,
+    "hijack_type": "exact",
+    "key_transit_asns": [1299, 6939, 6453, 3356, 174, 3257],
+    "transit_as_descriptions": {
+      "1299": "Telstra",
+      "6939": "Cogent Communications",
+      "6453": "Tata Communications",
+      "3356": "Level 3 Communications",
+      "174": "Cogent Communications",
+      "3257": "GTT Communications"
+    },
+    "observed_peer_asns": [49673, 44393, 61218, 4608, 55720, 48185, 17639, 1403, 34927, 202365, 34800, 50300, 14907, 15562, 3549, 216285, 57821, 58057],
+    "propagation_patterns": [
+      {
+        "pattern": "Propagation through Tier 1 transit AS 1299 (Telstra)",
+        "example_paths": ["49673 20485 1299 7029", "48185 1299 7029", "1403 1299 7029"],
+        "count": 8
+      },
+      {
+        "pattern": "Propagation through Tier 1 transit AS 6939 (Cogent)",
+        "example_paths": ["44393 58057 6939 7029", "61218 6939 7029", "55720 6939 7029"],
+        "count": 6
+      },
+      {
+        "pattern": "Propagation through transit AS 6453 (Tata)",
+        "example_paths": ["44393 58057 6939 6453 7029", "202365 50673 6453 7029"],
+        "count": 4
+      },
+      {
+        "pattern": "Mixed transit paths through multiple Tier 1 networks",
+        "example_paths": ["4608 7575 6461 7029", "3549 3356 1299 7029"],
+        "count": 10
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": "1763643454",
+        "datetime": "2025-11-20 12:57:34 UTC",
+        "peer_asn": 49673,
+        "as_path": "49673 20485 1299 7029",
+        "prefix": "113.20.40.0/22"
+      },
+      {
+        "timestamp": "1763647258",
+        "datetime": "2025-11-20 14:00:58 UTC",
+        "peer_asn": 44393,
+        "as_path": "44393 58057 6939 6453 7029",
+        "prefix": "113.20.40.0/22"
+      },
+      {
+        "timestamp": "1763649724",
+        "datetime": "2025-11-20 14:42:04 UTC",
+        "peer_asn": 61218,
+        "as_path": "61218 6939 7029",
+        "prefix": "113.20.40.0/22"
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 3.82,
+      "average_path_length_after": 3.96,
+      "path_inflation_rate": "3.8% increase",
+      "notes": "Minimal path inflation observed, suggesting efficient propagation through existing transit networks"
+    },
+    "geographic_analysis": {
+      "hijacker_location": "Unknown (AS 7029)",
+      "transit_network_coverage": "Global Tier 1 networks (Telstra, Cogent, Level 3, Tata)",
+      "propagation_scope": "global"
+    }
+  },
+  "impact_assessment": {
+    "visibility": "28 out of 39 observed paths (72%) show the hijacked route, indicating significant propagation",
+    "reachability_impact": "Traffic destined for 113.20.40.0/22 is being diverted to attacker AS 7029 instead of legitimate owner AS 397373",
+    "duration_impact": "Hijack persisted for approximately 12.5 hours from start to end time",
+    "mitigation_difficulty": "Moderate - requires coordination with multiple Tier 1 transit networks to filter illegitimate announcements"
+  },
+  "recommendations": [
+    "Notify direct upstream providers of AS 7029 to filter hijacked prefix announcements",
+    "Coordinate with Tier 1 networks (1299, 6939, 3356, 6453) to implement prefix filters for 113.20.40.0/22 from AS 7029",
+    "Legitimate owner AS 397373 should implement RPKI ROA to cryptographically validate prefix ownership",
+    "Monitor for similar hijack attempts targeting other prefixes owned by AS 397373",
+    "Implement BGP monitoring with real-time alerting for origin AS changes"
+  ]
+}

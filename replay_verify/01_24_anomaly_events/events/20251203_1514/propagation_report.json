@@ -1,0 +1,133 @@
+{
+  "prefix": "197.214.32.0/22",
+  "start_time": "2025-12-03 15:14:28",
+  "end_time": "2025-12-04 19:41:42",
+  "propagation_analysis": {
+    "key_transit_asns": [
+      16637,
+      6939,
+      174,
+      3356,
+      327708,
+      9498,
+      58057,
+      1299,
+      29504,
+      44393
+    ],
+    "transit_as_descriptions": {},
+    "observed_peer_asns": [
+      13830,
+      6939,
+      55720,
+      59919,
+      50300,
+      24482,
+      44393,
+      22652,
+      328977,
+      328840,
+      50628,
+      204092,
+      206499,
+      57381,
+      14907,
+      37721,
+      34927,
+      34800,
+      852,
+      213241,
+      17639,
+      61218,
+      1403,
+      45049,
+      4608,
+      216285,
+      7018,
+      3549,
+      38855,
+      202365,
+      20205,
+      57821,
+      34854,
+      48185,
+      49432,
+      132825,
+      208972,
+      49673,
+      3333,
+      58057,
+      34549,
+      38001,
+      15562,
+      50304,
+      20514,
+      29504
+    ],
+    "propagation_patterns": [
+      {
+        "pattern": "AS path: 24482 6939 16637 37531",
+        "example_paths": [
+          "24482 6939 16637 37531"
+        ],
+        "count": 37
+      },
+      {
+        "pattern": "AS path: 29504 6939 16637 37531",
+        "example_paths": [
+          "29504 6939 16637 37531"
+        ],
+        "count": 28
+      },
+      {
+        "pattern": "AS path: 6939 16637 37531",
+        "example_paths": [
+          "6939 16637 37531"
+        ],
+        "count": 23
+      },
+      {
+        "pattern": "AS path: 49673 6939 16637 37531",
+        "example_paths": [
+          "49673 6939 16637 37531"
+        ],
+        "count": 21
+      },
+      {
+        "pattern": "AS path: 202365 6939 16637 37531",
+        "example_paths": [
+          "202365 6939 16637 37531"
+        ],
+        "count": 19
+      }
+    ],
+    "propagation_timeline": [],
+    "path_inflation_analysis": {
+      "average_path_length_before": 4.0,
+      "average_path_length_after": 4.59,
+      "path_inflation_rate": "14.7% increase",
+      "notes": "Based on analysis of post-event AS paths"
+    },
+    "geographic_analysis": {
+      "transit_network_coverage": "Global",
+      "propagation_scope": "Regional"
+    },
+    "leaking_as": null,
+    "leaked_to": [],
+    "direct_upstream": null,
+    "leak_direction": "unknown"
+  },
+  "impact_assessment": {
+    "visibility": "Observed by 46 peer ASNs",
+    "reachability_impact": "Moderate - legitimate owner reclaimed prefix",
+    "duration_impact": "Event duration: 2025-12-03 15:14:28 to 2025-12-04 19:41:42",
+    "mitigation_difficulty": "Low - self-corrected by legitimate owner"
+  },
+  "recommendations": [
+    "Monitor for similar prefix announcements by unauthorized ASes",
+    "Implement RPKI for prefix validation to prevent unauthorized announcements",
+    "Coordinate with Tier 1 networks for prefix filters",
+    "Maintain accurate prefix-to-AS mapping databases"
+  ],
+  "leak_start_time": "2025-12-03 15:14:28 UTC"
+}

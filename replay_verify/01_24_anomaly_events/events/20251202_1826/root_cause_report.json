@@ -1,0 +1,8 @@
+{
+  "prefix": "182.160.124.0/24",
+  "start_time": "2025-12-02 18:26:50",
+  "end_time": "2025-12-02 19:01:45",
+  "anomaly_type": "other",
+  "root_cause": {},
+  "description": "No definitive anomaly detected. The AS path changed from '202365 50673 9498 139009 24323' to '202365 6939 139009 24323', but no abnormal business relationship patterns were found. The origin AS (24323) remains the legitimate owner of the prefix. This appears to be a normal routing change where the path switched from AS 50673 → AS 9498 to AS 6939 directly."
+}

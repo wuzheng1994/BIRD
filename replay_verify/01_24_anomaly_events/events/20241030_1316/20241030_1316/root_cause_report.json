@@ -1,0 +1,12 @@
+{
+  "prefix": "108.171.108.0/23",
+  "start_time": "2024-10-30 13:16:00",
+  "end_time": "2024-10-30 13:40:00",
+  "anomaly_type": "route_leak",
+  "root_cause": {
+    "leaking_as": 49981,
+    "leak_type": "provider_to_peer",
+    "abnormal_triplets": ["5511 49981 137409"]
+  },
+  "description": "AS 49981 leaked routes received from its provider (AS 5511) to its peer (AS 137409), violating the valley-free routing principle. The leak inserted AS 49981 and additional transit ASes (5511, 3257, 32097, 52025) into the path, while the legitimate origin AS (140952) remained unchanged. The path changed from '34927 56655 6939 137409 140952' to '34927 52025 32097 3257 5511 49981 137409 140952'."
+}

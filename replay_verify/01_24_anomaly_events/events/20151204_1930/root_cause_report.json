@@ -1,0 +1,13 @@
+{
+  "prefix": "172.81.128.0/21",
+  "start_time": "2015-12-04 19:30:00",
+  "end_time": "2015-12-06 21:00:00",
+  "anomaly_type": "prefix_hijack",
+  "root_cause": {
+    "attacker_as": 203959,
+    "victim_as": 46664,
+    "network_address": "172.81.128.0",
+    "hijacked_prefix": "172.81.129.0/24"
+  },
+  "description": "AS 203959 hijacked prefix 172.81.129.0/24, which is a more-specific prefix within the legitimate block 172.81.128.0/21 owned by AS 46664. The attacker AS 203959 announced this more-specific prefix, causing traffic destined for 172.81.129.0/24 to be routed to the attacker's network instead of the legitimate owner AS 46664. Reference cases show AS 203959 has a history of similar prefix hijack incidents in 2015."
+}

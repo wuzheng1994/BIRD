@@ -1,0 +1,12 @@
+{
+  "prefix": "87.229.125.0/24",
+  "start_time": "2025-12-03 19:07:20",
+  "end_time": "2025-12-03 23:39:14",
+  "anomaly_type": "prefix_hijack",
+  "root_cause": {
+    "attacker_as": 834,
+    "victim_as": 214025,
+    "network_address": "87.229.125.0"
+  },
+  "description": "AS 834 hijacked prefix 87.229.125.0/24. The legitimate origin is AS 214025, but AS 834 is announcing this prefix."
+}

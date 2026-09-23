@@ -1,0 +1,59 @@
+{
+  "prefix": "101.124.0.0/16",
+  "start_time": "2018-06-29 13:00:00",
+  "end_time": "2018-06-29 22:00:00",
+  "hijack_start_time": "2018-06-29 13:00:00 UTC",
+  "propagation_analysis": {
+    "hijacker_as": 197426,
+    "direct_upstream": 174,
+    "key_transit_asns": [174, 1299, 2914, 3257, 1257, 13030, 3320, 8220, 15576, 29208],
+    "transit_as_descriptions": {
+      "174": "Cogent Communications",
+      "1299": "Telstra",
+      "2914": "NTT Communications",
+      "3257": "GTT Communications",
+      "1257": "Telefonica"
+    },
+    "observed_peer_asns": [3333, 1836, 64050, 8758, 15562, 3257, 50304, 7018, 57381, 6881],
+    "propagation_patterns": [
+      {
+        "pattern": "Direct propagation through Cogent (AS 174)",
+        "example_paths": ["3333 1257 174 197426", "3257 174 197426"],
+        "count": 15
+      },
+      {
+        "pattern": "Propagation through Telstra (AS 1299) to Cogent",
+        "example_paths": ["1836 13030 1299 174 197426", "50304 1299 174 197426"],
+        "count": 8
+      },
+      {
+        "pattern": "Propagation through NTT (AS 2914) to Cogent",
+        "example_paths": ["64050 2914 174 197426", "15562 2914 174 197426"],
+        "count": 12
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 5.2,
+      "average_path_length_after": 4.5,
+      "path_inflation_rate": "13% decrease",
+      "notes": "Hijack paths show slightly shorter paths due to more direct propagation through major transit networks"
+    },
+    "geographic_analysis": {
+      "hijacker_location": "Unknown (AS 197426)",
+      "transit_network_coverage": "Global Tier 1 and Tier 2 networks",
+      "propagation_scope": "Global propagation through major transit networks including Cogent, Telstra, NTT, and GTT"
+    }
+  },
+  "impact_assessment": {
+    "visibility": "High - observed by 10+ peer ASNs across multiple regions",
+    "reachability_impact": "Significant - traffic to 101.124.128.0/18 redirected to attacker",
+    "duration_impact": "High - approximately 9 hour duration",
+    "mitigation_difficulty": "Medium - requires coordination with Tier 1 networks"
+  },
+  "recommendations": [
+    "Notify AS 174 (Cogent Communications) to filter announcements from AS 197426 for prefix 101.124.128.0/18",
+    "Coordinate with Tier 1 networks (1299, 2914, 3257) to implement prefix filters",
+    "Monitor for similar attacks on other prefixes owned by AS 131486",
+    "Implement RPKI for prefix validation to prevent similar hijacks"
+  ]
+}

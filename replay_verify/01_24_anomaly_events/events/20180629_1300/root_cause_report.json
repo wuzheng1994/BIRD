@@ -1,0 +1,13 @@
+{
+  "prefix": "101.124.0.0/16",
+  "start_time": "2018-06-29 13:00:00",
+  "end_time": "2018-06-29 22:00:00",
+  "anomaly_type": "prefix_hijack",
+  "root_cause": {
+    "attacker_as": 197426,
+    "victim_as": 131486,
+    "network_address": "101.124.128.0",
+    "hijacked_prefix": "101.124.128.0/18"
+  },
+  "description": "AS 197426 hijacked prefix 101.124.128.0/18 (a more specific prefix within 101.124.0.0/16). The legitimate origin is AS 131486, but AS 197426 is announcing this more specific prefix, causing traffic to be redirected to the attacker's network."
+}

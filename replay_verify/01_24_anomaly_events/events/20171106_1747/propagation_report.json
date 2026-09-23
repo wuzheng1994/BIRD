@@ -1,0 +1,91 @@
+{
+  "prefix": "47.37.0.0/18",
+  "start_time": "2017-11-06 17:47:00",
+  "end_time": "2017-11-06 19:24:00",
+  "leak_start_time": "2017-11-06 17:48:35 UTC",
+  "propagation_analysis": {
+    "key_transit_asns": [2914, 1239, 3356, 4637, 1221, 4608, 2497, 4777],
+    "transit_as_descriptions": {
+      "2914": "NTT Communications / Level3",
+      "1239": "Sprint",
+      "3356": "Level3",
+      "4637": "Telstra",
+      "1221": "Telstra",
+      "4608": "Telstra",
+      "2497": "Internet Initiative Japan (IIJ)",
+      "4777": "KDDI"
+    },
+    "observed_peer_asns": [4777, 37989, 3333, 4608],
+    "propagation_patterns": [
+      {
+        "pattern": "Normal route via Level3 backbone",
+        "example_paths": ["4777 2497 2914 3356 33588", "37989 4844 2914 3356 33588"],
+        "count": 2
+      },
+      {
+        "pattern": "Leaked route via Sprint (AS 1239)",
+        "example_paths": ["3333 1257 1239 3356 33588", "4608 1221 4637 1239 3356 33588"],
+        "count": 3
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": "1509990515",
+        "datetime": "2017-11-06 17:48:35 UTC",
+        "peer_asn": 4777,
+        "as_path": "4777 2497 2914 3356 33588",
+        "prefix": "47.37.0.0/18"
+      },
+      {
+        "timestamp": "1509990525", 
+        "datetime": "2017-11-06 17:48:45 UTC",
+        "peer_asn": 37989,
+        "as_path": "37989 4844 2914 3356 33588",
+        "prefix": "47.37.0.0/18"
+      },
+      {
+        "timestamp": "1509990532",
+        "datetime": "2017-11-06 17:48:52 UTC", 
+        "peer_asn": 3333,
+        "as_path": "3333 1257 1239 3356 33588",
+        "prefix": "47.37.0.0/18"
+      },
+      {
+        "timestamp": "1509990572",
+        "datetime": "2017-11-06 17:49:32 UTC",
+        "peer_asn": 4608, 
+        "as_path": "4608 1221 4637 1239 3356 33588",
+        "prefix": "47.37.0.0/18"
+      }
+    ],
+    "path_inflation_analysis": {
+      "normal_path_length_avg": 5,
+      "leaked_path_length_avg": 6,
+      "max_inflation": 1,
+      "affected_paths_percentage": 60
+    },
+    "geographic_analysis": {
+      "regions_affected": ["Asia-Pacific", "North America", "Europe"],
+      "major_isps_involved": ["Telstra (Australia)", "KDDI/IIJ (Japan)", "Sprint (USA)", "Level3 (Global)"]
+    },
+    "leaking_as": 1239,
+    "leaked_to": [3333, 4608],
+    "direct_upstream": 4637,
+    "leak_direction": "provider-to-peer"
+  },
+  "impact_assessment": {
+    "severity": "moderate",
+    "scope": "global",
+    "duration_minutes": 97,
+    "affected_prefixes": ["47.37.0.0/18"],
+    "potential_traffic_diversion": "low",
+    "networks_at_risk": ["Networks peering with AS 1239 that don't filter properly"]
+  },
+  "recommendations": [
+    "AS 1239 should implement strict filtering to prevent provider-to-peer route leaks",
+    "Upstream providers of AS 1239 should implement RPKI validation",
+    "Peers of AS 1239 should implement prefix filtering for customer routes",
+    "Monitor for similar patterns involving AS 1239 in future incidents",
+    "Consider implementing BGP security best practices including route validation"
+  ]
+}

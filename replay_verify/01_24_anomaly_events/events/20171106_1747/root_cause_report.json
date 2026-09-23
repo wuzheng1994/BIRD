@@ -1,0 +1,10 @@
+{
+  "prefix": "47.37.0.0/18",
+  "anomaly_type": "route_leak",
+  "root_cause": {
+    "leaking_as": 1239,
+    "abnormal_triplets": ["4637 1239 3356"],
+    "leak_type": "provider_to_peer"
+  },
+  "description": "AS 1239 leaked traffic from its provider (AS 4637) to its peer (AS 3356), violating AS relationship constraints. The legitimate origin AS 33588 remains unchanged, confirming this is a route leak rather than a prefix hijack. The abnormal relationship pattern indicates provider-to-peer leakage where AS 1239 allowed its provider AS 4637 to reach its peer AS 3356 through an unauthorized path."
+}

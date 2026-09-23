@@ -1,0 +1,53 @@
+{
+  "prefix": "121.91.63.0/24",
+  "start_time": "2025-12-27 15:13:20",
+  "end_time": "2025-12-27 16:08:24",
+  "propagation_analysis": {
+    "key_transit_asns": [
+      41095,
+      58453,
+      59257
+    ],
+    "transit_as_descriptions": {},
+    "observed_peer_asns": [
+      41095
+    ],
+    "propagation_patterns": [
+      {
+        "pattern": "AS path: 41095 58453 59257 138423",
+        "example_paths": [
+          "41095 58453 59257 138423"
+        ],
+        "count": 3
+      }
+    ],
+    "propagation_timeline": [],
+    "path_inflation_analysis": {
+      "average_path_length_before": 4.0,
+      "average_path_length_after": 4.0,
+      "path_inflation_rate": "-0.0% decrease",
+      "notes": "Based on analysis of post-event AS paths"
+    },
+    "geographic_analysis": {
+      "transit_network_coverage": "Global",
+      "propagation_scope": "Regional"
+    },
+    "leaking_as": null,
+    "leaked_to": [],
+    "direct_upstream": null,
+    "leak_direction": "unknown"
+  },
+  "impact_assessment": {
+    "visibility": "Observed by 1 peer ASNs",
+    "reachability_impact": "Moderate - legitimate owner reclaimed prefix",
+    "duration_impact": "Event duration: 2025-12-27 15:13:20 to 2025-12-27 16:08:24",
+    "mitigation_difficulty": "Low - self-corrected by legitimate owner"
+  },
+  "recommendations": [
+    "Monitor for similar prefix announcements by unauthorized ASes",
+    "Implement RPKI for prefix validation to prevent unauthorized announcements",
+    "Coordinate with Tier 1 networks for prefix filters",
+    "Maintain accurate prefix-to-AS mapping databases"
+  ],
+  "leak_start_time": "2025-12-27 15:13:20 UTC"
+}

@@ -1,0 +1,69 @@
+{
+  "prefix": "103.197.167.0/24",
+  "start_time": "2025-11-14 00:17:43",
+  "end_time": "2025-11-14 00:29:13",
+  "propagation_analysis": {
+    "key_transit_asns": [
+      6894,
+      45489,
+      4637,
+      6939,
+      7642
+    ],
+    "transit_as_descriptions": {
+      "6894": "AS 6894 - Unknown network",
+      "45489": "AS 45489 - Leaking network",
+      "4637": "AS 4637 - Telstra Global",
+      "6939": "AS 6939 - Hurricane Electric",
+      "7642": "AS 7642 - Vietnam Posts and Telecommunications Group"
+    },
+    "observed_peer_asns": [
+      6894
+    ],
+    "propagation_patterns": [
+      {
+        "pattern": "Route leak through AS 45489 with transit via 4637",
+        "example_paths": [
+          "6894 4637 45489 24016"
+        ],
+        "count": 1
+      },
+      {
+        "pattern": "Route leak through AS 45489 with transit via 6939 and 7642",
+        "example_paths": [
+          "6894 6939 7642 45489 24016"
+        ],
+        "count": 1
+      }
+    ],
+    "propagation_timeline": [],
+    "path_inflation_analysis": {
+      "average_path_length_before": 4.0,
+      "average_path_length_after": 4.5,
+      "path_inflation_rate": "12.5% increase",
+      "notes": "Based on analysis of post-event AS paths"
+    },
+    "geographic_analysis": {
+      "leak_origin": "Likely Southeast Asia (based on AS 7642 - Vietnam)",
+      "transit_network_coverage": "Global transit via Telstra (4637) and Hurricane Electric (6939)",
+      "propagation_scope": "Limited regional propagation"
+    },
+    "leaking_as": 45489,
+    "leaked_to": [6894],
+    "direct_upstream": 7642,
+    "leak_direction": "customer_to_provider"
+  },
+  "impact_assessment": {
+    "visibility": "Low - observed by only 1 peer ASN (6894)",
+    "reachability_impact": "Limited - route leak caused path inflation but origin AS remained correct",
+    "duration_impact": "Short - approximately 12 minute duration",
+    "mitigation_difficulty": "Low - upstream provider filtering could prevent similar leaks"
+  },
+  "recommendations": [
+    "Notify AS 7642 (direct upstream of leaking AS 45489) to enforce route filtering policies",
+    "Implement BGP route leak detection mechanisms to identify similar anomalies",
+    "Review peering agreements with AS 45489 to ensure compliance with valley-free routing principles",
+    "Monitor for abnormal AS path patterns involving AS 45489 and 6894"
+  ],
+  "leak_start_time": "2025-11-14 00:17:43 UTC"
+}

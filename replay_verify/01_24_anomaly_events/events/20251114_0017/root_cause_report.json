@@ -1,0 +1,12 @@
+{
+  "prefix": "103.197.167.0/24",
+  "start_time": "2025-11-14 00:17:43",
+  "end_time": "2025-11-14 00:29:13",
+  "anomaly_type": "route_leak",
+  "root_cause": {
+    "leaking_as": 45489,
+    "leak_type": "customer_to_provider",
+    "abnormal_triplets": ["7642 45489 24016", "6894 6939 7642"]
+  },
+  "description": "Route leak detected involving AS 45489. Analysis of AS relationships shows abnormal triplets: 1) 7642 (provider) -> 45489 (customer) -> 24016 (provider) violates valley-free routing (customer-to-provider followed by provider-to-customer). 2) 6894 (peer) -> 6939 (customer) -> 7642 (provider) shows peer-to-peer leak. The legitimate origin AS 24016 remains unchanged, confirming this is not a prefix hijack."
+}

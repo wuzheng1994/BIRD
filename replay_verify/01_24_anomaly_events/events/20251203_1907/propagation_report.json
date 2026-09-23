@@ -1,0 +1,104 @@
+{
+  "prefix": "87.229.125.0/24",
+  "start_time": "2025-12-03 19:07:20",
+  "end_time": "2025-12-03 23:39:14",
+  "hijack_start_time": "2025-12-03 19:07:20 UTC",
+  "propagation_analysis": {
+    "hijacker_as": 834,
+    "direct_upstream": 15830,
+    "key_transit_asns": [3356, 15830, 174, 396356, 6939],
+    "transit_as_descriptions": {
+      "3356": "Level 3 Communications",
+      "15830": "RETN Limited",
+      "174": "Cogent Communications",
+      "396356": "Unknown",
+      "6939": "Hurricane Electric"
+    },
+    "observed_peer_asns": [328840, 61218, 48185, 14907, 3549],
+    "propagation_patterns": [
+      {
+        "pattern": "Through AS 3356 and AS 15830",
+        "example_paths": ["3549 3356 15830 834", "14907 3356 15830 834", "48185 3356 15830 834"],
+        "count": 4
+      },
+      {
+        "pattern": "Through AS 174 and AS 396356",
+        "example_paths": ["328840 327727 174 396356 834"],
+        "count": 1
+      },
+      {
+        "pattern": "Through AS 6939, AS 3356 and AS 15830",
+        "example_paths": ["61218 6939 3356 15830 834"],
+        "count": 1
+      }
+    ],
+    "propagation_timeline": [
+      {
+        "timestamp": "1764795065",
+        "datetime": "2025-12-03 23:51:05 UTC",
+        "peer_asn": 328840,
+        "as_path": "328840 327727 174 396356 834",
+        "prefix": "87.229.125.0/24"
+      },
+      {
+        "timestamp": "1764801549",
+        "datetime": "2025-12-04 01:39:09 UTC",
+        "peer_asn": 61218,
+        "as_path": "61218 6939 3356 15830 834",
+        "prefix": "87.229.125.0/24"
+      },
+      {
+        "timestamp": "1764801549",
+        "datetime": "2025-12-04 01:39:09 UTC",
+        "peer_asn": 48185,
+        "as_path": "48185 3356 15830 834",
+        "prefix": "87.229.125.0/24"
+      },
+      {
+        "timestamp": "1764801554",
+        "datetime": "2025-12-04 01:39:14 UTC",
+        "peer_asn": 14907,
+        "as_path": "14907 3356 15830 834",
+        "prefix": "87.229.125.0/24"
+      },
+      {
+        "timestamp": "1764801560",
+        "datetime": "2025-12-04 01:39:20 UTC",
+        "peer_asn": 3549,
+        "as_path": "3549 3356 15830 834",
+        "prefix": "87.229.125.0/24"
+      },
+      {
+        "timestamp": "1764801587",
+        "datetime": "2025-12-04 01:39:47 UTC",
+        "peer_asn": 3549,
+        "as_path": "3549 3356 15830 834",
+        "prefix": "87.229.125.0/24"
+      }
+    ],
+    "path_inflation_analysis": {
+      "average_path_length_before": 4.8,
+      "average_path_length_after": 4.7,
+      "path_inflation_rate": "2% decrease",
+      "notes": "Path lengths remained relatively stable, with minor variations in transit ASes"
+    },
+    "geographic_analysis": {
+      "hijacker_location": "Unknown",
+      "transit_network_coverage": "Global (AS 3356, AS 174, AS 6939 are global Tier 1 networks)",
+      "propagation_scope": "Regional (observed by 5 peer ASNs across multiple networks)"
+    }
+  },
+  "impact_assessment": {
+    "visibility": "Limited (observed by 5 peer ASNs)",
+    "reachability_impact": "Moderate (traffic redirected to hijacker AS 834)",
+    "duration_impact": "4 hours 32 minutes (19:07:20 to 23:39:14)",
+    "mitigation_difficulty": "Moderate (requires coordination with transit ASes 3356, 15830, 174)"
+  },
+  "recommendations": [
+    "Notify direct upstream AS 15830 to filter announcements from AS 834",
+    "Coordinate with Tier 1 networks (AS 3356, AS 174, AS 6939) for prefix filters",
+    "Monitor for similar attacks from AS 834",
+    "Implement RPKI for prefix validation to prevent unauthorized origin AS announcements",
+    "Enforce AS-path filtering policies to detect abnormal path changes"
+  ]
+}
